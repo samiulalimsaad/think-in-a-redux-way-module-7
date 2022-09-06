@@ -1,13 +1,13 @@
 import { axiosInstance } from "../../utils/axiosInstance";
 
-const getTransaction = async () =>
+export const getTransactions = async () =>
     (await axiosInstance.get("/transactions")).data;
 
-const addTransaction = async (data) =>
+export const addTransaction = async (data) =>
     (await axiosInstance.post("/transactions", data)).data;
 
-const editTransaction = async ({ id, data }) =>
+export const editTransaction = async ({ id, data }) =>
     (await axiosInstance.patch(`/transactions/${id}`, data)).data;
 
-const deleteTransaction = async (id) =>
+export const deleteTransaction = async (id) =>
     (await axiosInstance.delete(`/transactions/${id}`)).data;
